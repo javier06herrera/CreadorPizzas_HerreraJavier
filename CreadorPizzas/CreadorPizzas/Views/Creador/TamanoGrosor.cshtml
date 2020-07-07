@@ -26,7 +26,7 @@
                         <fieldset class="form-group">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    @Html.RadioButtonFor(model => model.tamano, "Pequeña")
+                                    @Html.RadioButtonFor(model => model.tamano, "Pequeña", new { @checked = "checked" })
                                     <span style="font-size:1.5rem;">Pequeña: 6 pedazos</span>
                                 </label>
                             </div>
@@ -54,7 +54,7 @@
                         <fieldset class="form-group">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    @Html.RadioButtonFor(model => model.grosor, "Delgada")
+                                    @Html.RadioButtonFor(model => model.grosor, "Delgada", new { @checked = "checked" })
                                     <span style="font-size:1.5rem;">Pasta Delgada</span>
                                 </label>
                             </div>
@@ -75,7 +75,7 @@
                 <img style="height:70%; width: 100%;" src="/Img/pasta.jpg" />
             </div>
             <div class="Btn">
-                <button type="button" class="btn btn-outline-primary myBtn">Select Toppings</button>
+                <button type="button" class="btn btn-outline-primary myBtn">Elegir Ingredientes</button>
             </div>
         </div>
 

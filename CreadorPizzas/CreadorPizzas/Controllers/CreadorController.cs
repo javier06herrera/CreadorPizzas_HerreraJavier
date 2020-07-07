@@ -12,15 +12,31 @@ namespace CreadorPizzas.Controllers
         // GET: Creador
         public ActionResult TamanoGrosor()
         {
-            //OrdenModel orden = new OrdenModel();
             return View();
         }
         [HttpPost]
         public ActionResult TamanoGrosor(OrdenModel orden)
         {
-            //OrdenModel orden = new OrdenModel();
-            return View();
+            TempData["Modelo"] = orden;
+            return RedirectToAction("Ingredientes");
         }
+
+
+        public ActionResult Ingredientes()
+        {
+            //OrdenModel orden = TempData["Modelo"] as OrdenModel;
+            //TempData["Modelo"] = orden;
+            OrdenModel orden = new OrdenModel();
+            return View(orden);
+        }
+        [HttpPost]
+        public ActionResult Ingredientes(OrdenModel orden)
+        {
+            TempData["Modelo"] = orden;
+            return RedirectToAction("Ingredientes");
+        }
+
+
     }
 
     

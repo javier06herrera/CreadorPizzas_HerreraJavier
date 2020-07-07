@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Ingredientes";
+}
+@model CreadorPizzas.Models.OrdenModel
+<!DOCTYPE html>
+@using (Html.BeginForm())
+{
+    <html lang="es">
+    <head>
+        <title>window.name</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <div class="grid-container1">
+            <div class="NavBar">
+                <div class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:relative; top:-50px; height:100px;">
+                    <h1 style="color:white;">Saboree sus favoritos</h1>
+                </div>
+                <div style="position:relative; bottom: 30px; left:88rem;">
+                    <button type="button" class="btn btn-outline-primary" style="font-size:1.5rem;">Su pizza acá</button>
+                </div>
+                
+            </div>
+            <div class="Section1"></div>
+            <div class="Section2"></div>
+            <div class="Quesos">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Quesos</th>
+                            <th scope="col" style="text-align:center;">Deliciosos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-active">
+                            <td>@Html.RadioButtonFor(model => Model.queso, "Mozzarella")</td>
+                            <td align="center"><img style="width:100px; height:auto;" src="/Img/pepperoni.png" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="Carnes">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Carnes</th>
+                            <th scope="col" style="text-align:center;">Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int index = 0; index < 7; index++)
+                        {
+                            string temp = Model.nombreImagenes[index];
+                            <tr class="table-active">
+                                <td>@Html.CheckBoxFor(model => model.ingredientesElegidos[index])</td>
+                                <td  align="center"><img style="width:100px; height:auto;" src=/Img/pepperoni.png /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="Vegetales">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Vegetales</th>
+                            <th scope="col" style="text-align:center;">Frescos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int index = 7; index < 13; index++)
+                        {
+                            string temp = Model.nombreImagenes[index];
+                            <tr class="table-active">
+                                <td >@Html.CheckBoxFor(model => model.ingredientesElegidos[index])</td>
+                                <td align="center"><img style="width:100px; height:auto;" src=/Img/pepperoni.png /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            @*<div class="Btn" style="position: absolute; top:800px;">
+            </div>*@
+        </div>
+        
+    </body>
+</html>
+}

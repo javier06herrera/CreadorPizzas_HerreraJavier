@@ -10891,3 +10891,29 @@ a.text-dark:hover, a.text-dark:focus {
 .Spc1 {
     grid-area: Spc1;
 }
+
+
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: 0.1fr 3.4fr 3.4fr 3.4fr 0.1fr;
+    grid-template-rows: 0.4fr 4fr 4fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "NavBar NavBar NavBar NavBar NavBar" "Section1 Quesos Carnes Vegetales Section2" "Section1 Quesos Carnes Vegetales Section2" ". Btn Btn Btn .";
+}
+
+.NavBar {
+    grid-area: NavBar;
+}
+
+.Section1 {
+    grid-area: Section1;
+}
+
+.Section2 {
+    grid-area: Section2;
+}
+
+.Quesos {
+    grid-area: Quesos;
+}

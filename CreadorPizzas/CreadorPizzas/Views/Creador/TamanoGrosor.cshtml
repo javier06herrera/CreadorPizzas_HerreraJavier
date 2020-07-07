@@ -2,41 +2,85 @@
 @{
     Layout = null;
 }
+@model CreadorPizzas.Models.OrdenModel
 <!DOCTYPE html>
+@using (Html.BeginForm())
+{
+    <html lang="es">
+    <head>
+        <title>window.name</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="NavBar">
+                <div class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:relative; top:-50px; height:100px;">
+                    <h1 style="color:white;">Elija su tamaño y grosor de pizza favoritos</h1>
+                </div>
+            </div>
+            <div class="Tamano">
+                <div class="card text-white bg-info mb-3" style="width: auto; height:100%;">
+                    <div class="card-header" style="font-size:2rem;">Tamaño:</div>
+                    <div class="card-body">
+                        <fieldset class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    @Html.RadioButtonFor(model => model.tamano, "Pequeña")
+                                    <span style="font-size:1.5rem;">Pequeña: 6 pedazos</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    @Html.RadioButtonFor(model => model.tamano, "Mediana")
+                                    <span style="font-size:1.5rem;">Mediana: 8 pedazos</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    @Html.RadioButtonFor(model => model.tamano, "Grande")
+                                    <span style="font-size:1.5rem;">Grande: 10 pedazos</span>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="Grosor">
 
-<html lang="es">
-<head>
-    <title>window.name</title>
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:relative; top:-50px; height:100px;">
-        <h1 style="color:white;">Elija su tamaño y grosor de pizza favoritos</h1>
-    </div>
+                <div class="card text-white bg-danger mb-3" style="width: auto; height:100%;">
+                    <div class="card-header" style="font-size:2rem;">Grosor:</div>
+                    <div class="card-body">
+                        <fieldset class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    @Html.RadioButtonFor(model => model.grosor, "Delgada")
+                                    <span style="font-size:1.5rem;">Pasta Delgada</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    @Html.RadioButtonFor(model => model.grosor, "Gruesa")
+                                    <span style="font-size:1.5rem;">Pasta Gruesa</span>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="ImgTam">
+                <img style="height:70%; width: 100%;" src="/Img/sizes.png" />
+            </div>
+            <div class="ImgGrs">
+                <img style="height:70%; width: 100%;" src="/Img/pasta.jpg" />
+            </div>
+            <div class="Btn">
+                <button type="button" class="btn btn-outline-primary myBtn">Select Toppings</button>
+            </div>
+        </div>
 
-    <fieldset class="form-group">
-        <legend>Radio buttons</legend>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                Option one is this and that—be sure to include why it's great
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                Option two can be something else and selecting it will deselect option one
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-                Option three is disabled
-            </label>
-        </div>
-    </fieldset>
-</body>
+    </body>
 </html>
+}
 
 

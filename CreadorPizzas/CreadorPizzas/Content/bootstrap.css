@@ -10850,3 +10850,44 @@ a.text-dark:hover, a.text-dark:focus {
 .pagination a:hover {
   text-decoration: none;
 }
+
+/******************************************************************************************************************/
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr 1.3fr 0.7fr;
+    grid-template-rows: 0.1fr 0.8fr 1fr 0.4fr;
+    gap: 1px 1px;
+    grid-template-areas: "NavBar NavBar NavBar NavBar" "Spc1 Tamano Grosor Spc2" "Spc1 ImgTam ImgGrs Spc2" "Spc1 Btn Btn Spc2";
+}
+
+.NavBar {
+    grid-area: NavBar;
+}
+
+.Tamano {
+    grid-area: Tamano;
+}
+
+.Grosor {
+    grid-area: Grosor;
+}
+
+.ImgGrs {
+    grid-area: ImgGrs;
+}
+
+.Btn {
+    grid-area: Btn;
+}
+
+.ImgTam {
+    grid-area: ImgTam;
+}
+
+.Spc2 {
+    grid-area: Spc2;
+}
+
+.Spc1 {
+    grid-area: Spc1;
+}

@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/****************************************************************************************************************/
+.myBtn {
+    position:relative; 
+    left:40%; 
+    bottom:5rem;
+    font-size:1.5rem;
+    /*color:ghostwhite;*/
+}

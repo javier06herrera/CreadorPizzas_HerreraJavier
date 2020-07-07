@@ -14,7 +14,7 @@ namespace CreadorPizzas.Controllers
 
         }
 
-        public void gneradorCaso(ref OrdenModel orden)
+        public void generadorCaso(ref OrdenModel orden)
         {
 
         }

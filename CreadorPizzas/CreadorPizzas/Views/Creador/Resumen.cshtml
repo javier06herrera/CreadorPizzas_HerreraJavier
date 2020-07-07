@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Resumen";
+}
+@model CreadorPizzas.Models.OrdenModel
+
+<!DOCTYPE html>
+@using (Html.BeginForm())
+{
+    <html lang="es">
+    <head>
+        <title>Resumen</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <table class="table table-hover" style="font-size:1.5rem;">
+            <thead>
+                <tr>
+                    <th scope="col">Selección</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int index = 0; index < Model.factura.Count(); index += 2)
+                {
+                    <tr class="table-danger">
+                        <td>@Html.DisplayFor(model => Model.factura[index])</td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>@Html.DisplayFor(model => Model.factura[index + 1])</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </body>
+</html>
+
+}

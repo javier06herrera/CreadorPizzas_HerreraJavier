@@ -20,7 +20,6 @@ namespace CreadorPizzas.Models
             "/Img/jamón.png",
             "/Img/tocino.png",
             "/Img/salami.png",
-            "/Img/chorizo.png",
             "/Img/carneMolida.png",
             "/Img/pollo.png",
             "/Img/champiñones.png",
@@ -31,26 +30,24 @@ namespace CreadorPizzas.Models
             "/Img/chileDulce.png"
         };
 
-        public String[] nombreIngredientes =
+        public String[] nombreIngredientes = 
 {
-            "pepperoni",
-            "jamón",
-            "tocino",
-            "salami",
-            "chorizo",
-            "carneMolida",
-            "pollo",
-            "champiñones",
-            "piña",
-            "jalapeños",
-            "aceitunas",
-            "cebolla",
-            "chileDulce"
+            "Pepperoni",
+            "Jamón",
+            "Tocino",
+            "Salami",
+            "Carne Molida",
+            "Pollo",
+            "Champiñones",
+            "Piña",
+            "Jalapeños",
+            "Aceitunas",
+            "Cebolla",
+            "ChileDulce"
         };
 
 
         public int[] precios = {
-            500,
             500,
             500,
             500,
@@ -68,5 +65,7 @@ namespace CreadorPizzas.Models
 
         public int precioBase = 2500;
         public int precioFinal { get; set; }
+
+        public String[] factura { get; set; }
     }
 }

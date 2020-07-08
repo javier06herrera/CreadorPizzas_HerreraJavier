@@ -32,7 +32,7 @@ namespace CreadorPizzas.Controllers
             model.tamano = "Grande";
             model.grosor = "Gruesa";
             model.queso = "Parmesano";
-            model.ingredientesElegidos = new bool[] { true, true, true, true, true, true, true, true, true, true, true, true };
+            model.ingredientesElegidos = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false };
         }
         
 
@@ -96,7 +96,7 @@ namespace CreadorPizzas.Controllers
                 }
             }
             calcularMontos(ref orden);
-            orden.factura.Add("Impuesto de Ventas");
+            orden.factura.Add("IMPUESTO DE VENTAS");
             orden.factura.Add(Convert.ToString(orden.impuestos));
         }
 

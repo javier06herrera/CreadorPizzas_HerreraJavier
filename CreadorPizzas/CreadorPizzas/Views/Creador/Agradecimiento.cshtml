@@ -19,8 +19,10 @@
             @*<h1 style="color:white;">Resumen</h1>*@
         </div>
         <div class="card text-white bg-info mb-3" style="max-width: 50rem; height:300px; position:page; left:25%;">
-            <div class="card-body" style="font-size:5rem; text-align:center;">
-                Muchas Gracias <br />por su compra
+            <div class="card-body" style="font-size:3rem; text-align:center;">
+                Muchas gracias @Model.nombre<br />por preferirnos.
+                <br />Su orden será entregada en:
+                <br />@Model.direccion
             </div>
         </div>
         <button class="btn btn-success" style="font-size:2rem; position:absolute; left:45%;">Ordenar Otra</button>

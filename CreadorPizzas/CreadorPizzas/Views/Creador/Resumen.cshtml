@@ -55,12 +55,12 @@
                     <div class="card-header" style="font-size:1.5rem;">Precio Final</div>
                     <div class="card-body" style="font-size:5rem; text-align:center;">
                         ₡@Html.DisplayFor(model => model.precioFinal)
-                        @Html.ActionLink("Crear Nueva","Creador","TamanoGrosor", new { @class="btn btn-danger", @style="font-size: 1.5rem;"})
+                        @Html.ActionLink("Rehacer", "TamanoGrosor","Creador", new { @class="btn btn-danger", @style="font-size: 1.5rem;"})
                     </div>
                 </div>
                 <div class="card text-white bg-danger mb-3" style="max-width: 20rem; position:absolute; left:20rem; top:0px; height:350px;">
                     <div class="card-header" style="font-size:1.5rem;">Datos de Orden</div>
-                    <div class="card-body" style="font-size:1.5rem;">
+                    <div class="card-body" style="font-size:1.5rem; text-align:center;">
                         <label class="col-form-label">Nombre</label>
                         @Html.EditorFor(model => model.nombre, new { @style = "font-size:1.5rem;" })
                         <br />

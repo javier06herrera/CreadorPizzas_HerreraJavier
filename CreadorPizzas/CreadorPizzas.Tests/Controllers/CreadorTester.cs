@@ -53,7 +53,7 @@ namespace CreadorPizzas.Tests.Controllers
             servicios.inicializador(ref modelo);
             servicios.calcularMontos(ref modelo);
 
-            Assert.AreEqual(modelo.impuestos, 2275);
+            Assert.AreEqual(modelo.impuestos, 1079);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace CreadorPizzas.Tests.Controllers
             servicios.inicializador(ref modelo);
             servicios.crearFactura(ref modelo);
 
-            Assert.AreEqual(modelo.precioFinal, 19775);
+            Assert.AreEqual(modelo.precioFinal, 9379);
         }
 
     }

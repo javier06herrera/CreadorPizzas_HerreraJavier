@@ -35,7 +35,14 @@ namespace CreadorPizzas.Controllers
         public ActionResult Ingredientes(OrdenModel elecciones)
         {
             OrdenModel orden = TempData["Modelo"] as OrdenModel;
-            orden.ingredientesElegidos = elecciones.ingredientesElegidos;
+            if (elecciones.ingredientesElegidos != null)
+            {
+                orden.ingredientesElegidos = elecciones.ingredientesElegidos;
+            }
+            else
+            {
+                orden.ingredientesElegidos = new bool[orden.nombreIngredientes.Count()];
+            }
             orden.queso = elecciones.queso;
             TempData["Modelo"] = orden;
             return RedirectToAction("Resumen");
@@ -52,14 +59,19 @@ namespace CreadorPizzas.Controllers
         }
 
         [HttpPost]
-        public ActionResult Resumen(OrdenModel orden)
+        public ActionResult Resumen(OrdenModel temp)
         {
+            OrdenModel orden = TempData["Modelo"] as OrdenModel;
+            orden.nombre = temp.nombre;
+            orden.direccion = temp.direccion;
+            TempData["Modelo"] = orden;
             return RedirectToAction("Agradecimiento");
         }
 
         public ActionResult Agradecimiento()
         {
-            return View();
+            OrdenModel orden = TempData["Modelo"] as OrdenModel;
+            return View(orden);
         }
 
         [HttpPost]

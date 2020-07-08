@@ -38,19 +38,19 @@
                     <tbody>
                         <tr class="table-warning">
                             <td>@Html.RadioButtonFor(model => Model.queso, "Mozzarella", new { @checked = "checked" }) Mozzarella</td>
-                            <td align="center"><img style="width:100px; height:auto;" src="/Img/pepperoni.png" /></td>
+                            <td align="center"><img style="width:100px; height:auto;" src="/Img/mozzarella.png" /></td>
                         </tr>
                         <tr class="table-warning">
                             <td>@Html.RadioButtonFor(model => Model.queso, "Ricotta") Ricotta</td>
-                            <td align="center"><img style="width:100px; height:auto;" src="/Img/pepperoni.png" /></td>
+                            <td align="center"><img style="width:100px; height:auto;" src="/Img/ricotta.png" /></td>
                         </tr>
                         <tr class="table-warning">
                             <td>@Html.RadioButtonFor(model => Model.queso, "Parmesano") Parmesano</td>
-                            <td align="center"><img style="width:100px; height:auto;" src="/Img/pepperoni.png" /></td>
+                            <td align="center"><img style="width:100px; height:auto;" src="/Img/parmesano.png" /></td>
                         </tr>
                         <tr class="table-warning">
                             <td>@Html.RadioButtonFor(model => Model.queso, "Sin Queso") Sin Queso</td>
-                            <td align="center"><img style="width:100px; height:auto;" src="/Img/pepperoni.png" /></td>
+                            <td align="center"><img style="width:100px; height:auto;" src="/Img/sinQueso.png" /></td>
                         </tr>
                     </tbody>
                 </table>
@@ -73,7 +73,7 @@
                                      @Html.CheckBoxFor(model => model.ingredientesElegidos[index])
                                     <span style="font-size: 1.5rem;">@Html.DisplayFor(model => Model.nombreIngredientes[index])</span>
                                 </td>
-                                <td  align="center"><img style="width:100px; height:auto;" src=/Img/pepperoni.png /></td>
+                                <td  align="center"><img style="width:100px; height:auto;" src=@Model.nombreImagenes[index] /></td>
                             </tr>
                         }
                     </tbody>
@@ -97,7 +97,7 @@
                                     @Html.CheckBoxFor(model => model.ingredientesElegidos[index]) 
                                     <span style="font-size: 1.5rem;">@Html.DisplayFor(model => Model.nombreIngredientes[index])</span>  
                                 </td>
-                                <td align="center"><img style="width:100px; height:auto;" src=/Img/pepperoni.png /></td>
+                                <td align="center"><img style="width:100px; height:auto;" src=@Model.nombreImagenes[index] /></td>
                             </tr>
                         }
                     </tbody>

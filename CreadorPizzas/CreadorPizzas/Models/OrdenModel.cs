@@ -17,7 +17,7 @@ namespace CreadorPizzas.Models
         public String[] nombreImagenes =
         {
             "/Img/pepperoni.png",
-            "/Img/jamón.png",
+            "/Img/jamon.png",
             "/Img/tocino.png",
             "/Img/salami.png",
             "/Img/carneMolida.png",

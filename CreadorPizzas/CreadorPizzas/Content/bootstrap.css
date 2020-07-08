@@ -10922,7 +10922,7 @@ a.text-dark:hover, a.text-dark:focus {
 .grid-container2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 0.1fr;
+    grid-template-rows: 1fr 1fr 1fr 0.1fr;
     gap: 1px 1px;
     grid-template-areas: "NavBar NavBar NavBar NavBar" "Factura Factura Envio Envio" "Factura Factura Envio Envio" ". . . .";
 }
@@ -10933,14 +10933,16 @@ a.text-dark:hover, a.text-dark:focus {
 
 .Factura {
     grid-area: Factura;
-    position: relative;
-    bottom:150px;
-    left:50px;
+    position: absolute;
+    top: 205px;
+    left: 5rem;
+    width:45rem;
 }
 
 .Envio {
     grid-area: Envio;
-    position: relative;
-    bottom: 150px;
-    left: 50px;
+    display:inline;
+    position: absolute;
+    top: 205px;
+    left: 50rem;
 }

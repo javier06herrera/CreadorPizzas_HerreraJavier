@@ -10,11 +10,6 @@ namespace CreadorPizzas.Controllers
     
     public class ServiciosController : Controller
     {
-        public void initializer(ref OrdenModel orden)
-        {
-
-        }
-
         public void generadorCaso(ref OrdenModel orden)
         {
             orden.factura = new List<String>();
@@ -32,28 +27,14 @@ namespace CreadorPizzas.Controllers
             orden.precioFinal = Convert.ToInt32((orden.precios.Sum() + 3000)*1.13);
             orden.impuestos = Convert.ToInt32(orden.precioFinal - (orden.precioFinal / 1.13));
         }
-
-        public void crearFactura(ref OrdenModel orden)
+        public void inicializador(ref OrdenModel model)
         {
-            orden.factura = new List<String>();
-            orden.factura.Add("Tamaño: "+orden.tamano);
-            orden.factura.Add(Convert.ToString(precio(orden.tamano)));
-            orden.factura.Add("Grosor: "+ orden.grosor);
-            orden.factura.Add(Convert.ToString(precio(orden.grosor)));
-            orden.factura.Add(orden.queso);
-            orden.factura.Add("500");
-            for(int index=0; index < orden.ingredientesElegidos.Count(); index++)
-            {
-                if (orden.ingredientesElegidos[index])
-                {
-                    orden.factura.Add(orden.nombreIngredientes[index]);
-                    orden.factura.Add(Convert.ToString(orden.precios[index]));
-                }
-            }
-            calcularMontos(ref orden);
-            orden.factura.Add("Impuesto de Ventas");
-            orden.factura.Add(Convert.ToString(orden.impuestos));
+            model.tamano = "Grande";
+            model.grosor = "Gruesa";
+            model.queso = "Parmesano";
+            model.ingredientesElegidos = new bool[] { true, true, true, true, true, true, true, true, true, true, true, true };
         }
+        
 
         public int precio(String propiedad)
         {
@@ -69,6 +50,12 @@ namespace CreadorPizzas.Controllers
                     return 500;
                 case "Gruesa":
                     return 800;
+                case "Parmesano":
+                    return 1500;
+                case "Mozzarella":
+                    return 1000;
+                case "Ricotta":
+                    return 2000;
                 default:
                     return 0;
             }
@@ -89,6 +76,28 @@ namespace CreadorPizzas.Controllers
             }
             orden.impuestos = Convert.ToInt32(orden.precioFinal * 0.13);
             orden.precioFinal += orden.impuestos;
+        }
+
+        public void crearFactura(ref OrdenModel orden)
+        {
+            orden.factura = new List<String>();
+            orden.factura.Add("Tamaño: " + orden.tamano);
+            orden.factura.Add(Convert.ToString(precio(orden.tamano)));
+            orden.factura.Add("Grosor: " + orden.grosor);
+            orden.factura.Add(Convert.ToString(precio(orden.grosor)));
+            orden.factura.Add(orden.queso);
+            orden.factura.Add(Convert.ToString(precio(orden.queso)));
+            for (int index = 0; index < orden.ingredientesElegidos.Count(); index++)
+            {
+                if (orden.ingredientesElegidos[index])
+                {
+                    orden.factura.Add(orden.nombreIngredientes[index]);
+                    orden.factura.Add(Convert.ToString(orden.precios[index]));
+                }
+            }
+            calcularMontos(ref orden);
+            orden.factura.Add("Impuesto de Ventas");
+            orden.factura.Add(Convert.ToString(orden.impuestos));
         }
 
     }

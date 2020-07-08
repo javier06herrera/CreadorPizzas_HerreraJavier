@@ -17,7 +17,7 @@
     <body>
         <div class="grid-container2">
             <div class="NavBar">
-                <div class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:relative; top:-50px; height:100px;">
+                <div class="navbar navbar-expand-lg navbar-dark bg-primary" style=" height:100px;">
                     <h1 style="color:white;">Resumen</h1>
                 </div>
             </div>
@@ -34,14 +34,14 @@
                         {
                             <tr class="table-danger">
                                 <td>@Html.DisplayFor(model => Model.factura[index])</td>
-                                <td>@Html.DisplayFor(model => Model.factura[index + 1])</td>
+                                <td>₡@Html.DisplayFor(model => Model.factura[index + 1])</td>
                             </tr>
                             if ((index + 2) < Model.factura.Count())
                             {
 
                                 <tr class="table-info">
                                     <td>@Html.DisplayFor(model => Model.factura[index + 2])</td>
-                                    <td>@Html.DisplayFor(model => Model.factura[index + 3])</td>
+                                    <td>₡@Html.DisplayFor(model => Model.factura[index + 3])</td>
                                 </tr>
 
                             }
@@ -50,8 +50,15 @@
                     </tbody>
                 </table>
             </div>
-            <div class="Envio" style="text-align:center; position:relative; left:35%;">
-                <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+            <div class="Envio">
+                <div class="card text-white bg-info mb-3" style="max-width: 20rem; height:350px;">
+                    <div class="card-header" style="font-size:1.5rem;">Precio Final</div>
+                    <div class="card-body" style="font-size:5rem; text-align:center;">
+                        ₡@Html.DisplayFor(model => model.precioFinal)
+                        @Html.ActionLink("Crear Nueva","Creador","TamanoGrosor", new { @class="btn btn-danger", @style="font-size: 1.5rem;"})
+                    </div>
+                </div>
+                <div class="card text-white bg-danger mb-3" style="max-width: 20rem; position:absolute; left:20rem; top:0px; height:350px;">
                     <div class="card-header" style="font-size:1.5rem;">Datos de Orden</div>
                     <div class="card-body" style="font-size:1.5rem;">
                         <label class="col-form-label">Nombre</label>
@@ -63,12 +70,7 @@
                         <button class="btn btn-success" style="font-size:1.5rem;">Ordenar</button>
                     </div>
                 </div>
-                <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-                    <div class="card-header" style="font-size:1.5rem;">Precio Final</div>
-                    <div class="card-body" style="font-size:5rem; text-align:center;">
-                        ₡@Html.DisplayFor(model => model.precioFinal)
-                    </div>
-                </div>
+
             </div>
         </div>
     </body>

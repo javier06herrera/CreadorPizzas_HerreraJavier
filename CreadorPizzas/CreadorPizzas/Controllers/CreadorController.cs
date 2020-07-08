@@ -36,6 +36,7 @@ namespace CreadorPizzas.Controllers
         {
             OrdenModel orden = TempData["Modelo"] as OrdenModel;
             orden.ingredientesElegidos = elecciones.ingredientesElegidos;
+            orden.queso = elecciones.queso;
             TempData["Modelo"] = orden;
             return RedirectToAction("Resumen");
         }

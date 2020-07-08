@@ -4,15 +4,16 @@
 }
 @model CreadorPizzas.Models.OrdenModel
 <!DOCTYPE html>
-@using (Html.BeginForm())
-{
-    <html lang="es">
-    <head>
-        <title>window.name</title>
-        <link href="~/Content/bootstrap.css" rel="stylesheet" />
-        <link href="~/Content/Site.css" rel="stylesheet" />
-    </head>
-    <body>
+
+<html lang="es">
+<head>
+    <title>window.name</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
         <div class="grid-container">
             <div class="NavBar">
                 <div class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:relative; top:-50px; height:100px;">
@@ -68,6 +69,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="ImgTam">
                 <img style="height:70%; width: 100%;" src="/Img/sizes.png" />
             </div>
@@ -75,12 +77,12 @@
                 <img style="height:70%; width: 100%;" src="/Img/pasta.jpg" />
             </div>
             <div class="Btn">
-                <button type="button" class="btn btn-outline-primary myBtn">Elegir Ingredientes</button>
+                <button class="btn btn-outline-primary myBtn">Elegir Ingredientes</button>
             </div>
         </div>
-
-    </body>
+    }
+</body>
 </html>
-}
+
 
 

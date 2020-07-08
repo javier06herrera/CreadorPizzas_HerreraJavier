@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Agradecimiento";
+}
+@model CreadorPizzas.Models.OrdenModel
+
+<!DOCTYPE html>
+@using (Html.BeginForm())
+{
+    <html lang="es">
+    <head>
+        <title>Resumen</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:relative; top:-50px; height:100px;">
+            @*<h1 style="color:white;">Resumen</h1>*@
+        </div>
+        <div class="card text-white bg-info mb-3" style="max-width: 50rem; height:300px; position:page; left:25%;">
+            <div class="card-body" style="font-size:5rem; text-align:center;">
+                Muchas Gracias <br />por su compra
+            </div>
+        </div>
+        <button class="btn btn-success" style="font-size:2rem; position:absolute; left:45%;">Ordenar Otra</button>
+    </body>
+</html>
+}

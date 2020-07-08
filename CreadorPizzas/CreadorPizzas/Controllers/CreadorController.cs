@@ -7,8 +7,10 @@ using CreadorPizzas.Models;
 
 namespace CreadorPizzas.Controllers
 {
+
     public class CreadorController : Controller
     {
+        private ServiciosController servicios = new ServiciosController();
         // GET: Creador
         public ActionResult TamanoGrosor()
         {
@@ -24,9 +26,9 @@ namespace CreadorPizzas.Controllers
 
         public ActionResult Ingredientes()
         {
-            //OrdenModel orden = TempData["Modelo"] as OrdenModel;
-            //TempData["Modelo"] = orden;
-            OrdenModel orden = new OrdenModel();
+            OrdenModel orden = TempData["Modelo"] as OrdenModel;
+            TempData["Modelo"] = orden;
+            //OrdenModel orden = new OrdenModel();
             return View(orden);
         }
         [HttpPost]
@@ -36,7 +38,31 @@ namespace CreadorPizzas.Controllers
             return RedirectToAction("Ingredientes");
         }
 
+        public ActionResult Resumen()
+        {
+            //OrdenModel orden = TempData["Modelo"] as OrdenModel;
+            //TempData["Modelo"] = orden;
+            OrdenModel orden = new OrdenModel();
+            servicios.generadorCaso(ref orden);
+            return View(orden);
+        }
 
+        [HttpPost]
+        public ActionResult Resumen(OrdenModel orden)
+        {
+            return View();
+        }
+
+        public ActionResult Agradecimiento()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Agradecimiento(OrdenModel orden)
+        {
+            return View();
+        }
     }
 
     

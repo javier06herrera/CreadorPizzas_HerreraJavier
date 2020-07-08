@@ -167,6 +167,7 @@
     <Content Include="Views\Creador\TamanoGrosor.cshtml" />
     <Content Include="Views\Creador\Ingredientes.cshtml" />
     <Content Include="Views\Creador\Resumen.cshtml" />
+    <Content Include="Views\Creador\Agradecimiento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

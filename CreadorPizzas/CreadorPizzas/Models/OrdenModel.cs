@@ -65,7 +65,12 @@ namespace CreadorPizzas.Models
 
         public int precioBase = 2500;
         public int precioFinal { get; set; }
+        public int impuestos { get; set; }
 
-        public String[] factura { get; set; }
+        public List<String> factura { get; set; }
+
+        public String direccion { get; set; }
+
+        public String nombre { get; set; }
     }
 }

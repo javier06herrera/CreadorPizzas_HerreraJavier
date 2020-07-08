@@ -63,7 +63,6 @@ namespace CreadorPizzas.Models
 
         };
 
-        public int precioBase = 2500;
         public int precioFinal { get; set; }
         public int impuestos { get; set; }
 

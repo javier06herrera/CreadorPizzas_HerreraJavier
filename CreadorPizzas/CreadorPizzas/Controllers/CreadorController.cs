@@ -32,25 +32,28 @@ namespace CreadorPizzas.Controllers
             return View(orden);
         }
         [HttpPost]
-        public ActionResult Ingredientes(OrdenModel orden)
+        public ActionResult Ingredientes(OrdenModel elecciones)
         {
+            OrdenModel orden = TempData["Modelo"] as OrdenModel;
+            orden.ingredientesElegidos = elecciones.ingredientesElegidos;
             TempData["Modelo"] = orden;
-            return RedirectToAction("Ingredientes");
+            return RedirectToAction("Resumen");
         }
 
         public ActionResult Resumen()
         {
-            //OrdenModel orden = TempData["Modelo"] as OrdenModel;
-            //TempData["Modelo"] = orden;
-            OrdenModel orden = new OrdenModel();
-            servicios.generadorCaso(ref orden);
+            OrdenModel orden = TempData["Modelo"] as OrdenModel;
+            servicios.crearFactura(ref orden);
+            TempData["Modelo"] = orden;
+            //OrdenModel orden = new OrdenModel();
+            //servicios.generadorCaso(ref orden);
             return View(orden);
         }
 
         [HttpPost]
         public ActionResult Resumen(OrdenModel orden)
         {
-            return View();
+            return RedirectToAction("Agradecimiento");
         }
 
         public ActionResult Agradecimiento()
@@ -61,7 +64,7 @@ namespace CreadorPizzas.Controllers
         [HttpPost]
         public ActionResult Agradecimiento(OrdenModel orden)
         {
-            return View();
+            return RedirectToAction("TamanoGrosor");
         }
     }
 

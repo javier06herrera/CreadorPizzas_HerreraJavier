@@ -33,6 +33,63 @@ namespace CreadorPizzas.Controllers
             orden.impuestos = Convert.ToInt32(orden.precioFinal - (orden.precioFinal / 1.13));
         }
 
+        public void crearFactura(ref OrdenModel orden)
+        {
+            orden.factura = new List<String>();
+            orden.factura.Add("Tamaño: "+orden.tamano);
+            orden.factura.Add(Convert.ToString(precio(orden.tamano)));
+            orden.factura.Add("Grosor: "+ orden.grosor);
+            orden.factura.Add(Convert.ToString(precio(orden.grosor)));
+            orden.factura.Add(orden.queso);
+            orden.factura.Add("500");
+            for(int index=0; index < orden.ingredientesElegidos.Count(); index++)
+            {
+                if (orden.ingredientesElegidos[index])
+                {
+                    orden.factura.Add(orden.nombreIngredientes[index]);
+                    orden.factura.Add(Convert.ToString(orden.precios[index]));
+                }
+            }
+            calcularMontos(ref orden);
+            orden.factura.Add("Impuesto de Ventas");
+            orden.factura.Add(Convert.ToString(orden.impuestos));
+        }
+
+        public int precio(String propiedad)
+        {
+            switch (propiedad)
+            {
+                case "Pequeña":
+                    return 3000;
+                case "Mediana":
+                    return 5000;
+                case "Grande":
+                    return 7000;
+                case "Delgada":
+                    return 500;
+                case "Gruesa":
+                    return 800;
+                default:
+                    return 0;
+            }
+        }
+        
+        public void calcularMontos(ref OrdenModel orden)
+        {
+            orden.precioFinal = 0;
+            orden.precioFinal += precio(orden.tamano);
+            orden.precioFinal += precio(orden.grosor);
+            orden.precioFinal += 500;
+            for (int index=0; index<orden.ingredientesElegidos.Count(); index++)
+            {
+                if (orden.ingredientesElegidos[index])
+                {
+                    orden.precioFinal += orden.precios[index];
+                }
+            }
+            orden.impuestos = Convert.ToInt32(orden.precioFinal * 0.13);
+            orden.precioFinal += orden.impuestos;
+        }
 
     }
 }
